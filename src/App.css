@@ -1,0 +1,33 @@
+body {
+  background-image: url('../src/assets/table_desk.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+}
+
+#root {
+  width: 400px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid rgb(148, 148, 148);
+  border-radius: 15px;
+  padding: 15px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+ul, ul li {
+	list-style: none;
+}
+
+
+
+

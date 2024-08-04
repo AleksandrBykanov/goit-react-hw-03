@@ -1,0 +1,35 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.label {
+  font-size: 18px;
+}
+
+.field {
+  position: absolute;
+  height: 20px;
+  left: 70px;
+  width: 80%;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: 0;
+}
+
+.btn {
+  width: 120px;
+  height: 25px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(168, 168, 168, 0.63);
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(104, 104, 104, 0.671);
+  }
+}

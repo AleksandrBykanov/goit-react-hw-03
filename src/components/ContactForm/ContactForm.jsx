@@ -1,23 +1,36 @@
 import { Formik, Form, Field } from "formik";
 import css from "../ContactForm/ContactForm.module.css";
 
-const ContactForm = () => {
-  const initialValues = {
-      name: "",
-      number: ""
+const ContactForm = ({addProfile}) => {
+  const handleSubmit = (values, actions) => {
+    const profile = {
+      name: values.name,
+      number: values.number
+    }
+    addProfile(profile);
+    actions.resetForm();
   };
 
-
   return (
-    <Formik initialValues={initialValues} onSubmit={()=>{}}>
+    <Formik
+      initialValues={{
+        name: "",
+        number: "",
+      }}
+      onSubmit={handleSubmit}
+    >
       <Form className={css.form}>
-        <label className={css.label} htmlFor="name">Name
+        <label className={css.label} htmlFor="name">
+          Name:
           <Field className={css.field} type="text" name="name" />
         </label>
-        <label htmlFor="number">Number
+        <label className={css.label} htmlFor="number">
+          Number:
           <Field className={css.field} type="tel" name="number" />
         </label>
-        <button className={css.btn} type="submit">Submit</button>
+        <button className={css.btn} type="submit">
+          Add contact
+        </button>
       </Form>
     </Formik>
   );
