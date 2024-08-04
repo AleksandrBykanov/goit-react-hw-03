@@ -13,19 +13,30 @@ function App() {
     {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
   ]);
 
+  const [search, setsearch] = useState("");
+
   const addProfile = (profile) => {
-    const finalProfile = {
-      ...profile, id: nanoid()
-    }
+    const finalProfile = {...profile, id: nanoid()}
     setInputValue([finalProfile, ...inputValue]);
+  };
+
+  const deleteProfile = (profileid) => {
+    setInputValue(inputValue.filter(item => item.id !== profileid))
+  };
+
+  const filter = (e) => {
+    const filterValue = e.target.value;
+    setsearch(filterValue);
   }
+
+  const filterItems = inputValue.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
 
   return (
     <div>
       <h1>Phonebook</h1>
       <ContactForm addProfile={addProfile}/>
-      <SearchBox />
-      <ContactList items={inputValue} />
+      <SearchBox value={search} filter={filter}/>
+      <ContactList items={filterItems} deleteProfile={deleteProfile} />
     </div>
   );
 }

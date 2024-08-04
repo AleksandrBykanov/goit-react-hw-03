@@ -1,0 +1,28 @@
+.ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.li {
+  border: 1px solid black;
+  border-radius: 5px;
+  position: relative;
+  padding-left: 25px;
+  font-size: 20px;
+}
+
+.btn {
+  position: absolute;
+  top: 45%;
+  right: 15px;
+  height: 25px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(204, 203, 203, 0.712);
+  }
+
+}

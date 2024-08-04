@@ -1,12 +1,14 @@
-const ContactList = ({ items }) => {
+import css from "../ContactList/ContactList.module.css"
+
+const ContactList = ({items, deleteProfile}) => {
   return (
     <div>
-      <ul>
+      <ul className={css.ul}>
         {items.map((item) => (
-          <li key={item.id}>
+          <li className={css.li} key={item.id}>
             <p>{item.name}</p>
             <p>{item.number}</p>
-            <button type="button">Delete</button>
+            <button className={css.btn} type="button" onClick={()=>{deleteProfile(item.id)}}>Delete</button>
           </li>
         ))}
       </ul>
