@@ -1,4 +1,5 @@
 import css from "../ContactList/ContactList.module.css"
+import Contact from "../Contact/Contact";
 
 const ContactList = ({items, deleteProfile}) => {
   return (
@@ -6,9 +7,7 @@ const ContactList = ({items, deleteProfile}) => {
       <ul className={css.ul}>
         {items.map((item) => (
           <li className={css.li} key={item.id}>
-            <p>{item.name}</p>
-            <p>{item.number}</p>
-            <button className={css.btn} type="button" onClick={()=>{deleteProfile(item.id)}}>Delete</button>
+            <Contact number={item.number} name={item.name} deleteProfile={()=>{deleteProfile(item.id)}} />
           </li>
         ))}
       </ul>
